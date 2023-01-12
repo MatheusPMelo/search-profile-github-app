@@ -1,16 +1,12 @@
-import * as React from'react'
-import { Button, Text, View } from 'react-native'
+import React from 'react'
+import { Container } from './style';
+import { Text } from 'react-native';
 
-type IHome = {
-    navigation: any,
-}
-
-const Home : React.FC<IHome> = ({navigation}) => {
+const Home: React.FC = () => {
     return (
-        <View>
-            <Text>Home</Text>
-            <Button title='Repositories' onPress={() => navigation.navigate('Repositories')}/>
-        </View>
+        <Container>
+            <Text>Teste</Text>
+        </Container>
     );
 }
 

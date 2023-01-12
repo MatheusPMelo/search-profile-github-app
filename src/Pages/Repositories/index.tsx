@@ -9,7 +9,6 @@ const Repositories : React.FC<IRepository> = ({navigation}) => {
     return (
         <View>
             <Text>Repositories</Text>
-            <Button title='Voltar' onPress={() => navigation.goBack()}/>
         </View>
     );
 }

@@ -13,6 +13,7 @@ const UserData: React.FC<any> = ({
     follower,
     following,
     html_url,
+    location,
 }) => {
     return (
         <ContainerUser>
@@ -25,21 +26,26 @@ const UserData: React.FC<any> = ({
                         <Name>{name}</Name>
                     </ContainerName>
                 )}
-                {blog && (
-                    <Text>{blog}</Text>
+                {bio && (
+                    <View style={{ flexDirection: 'row' }}>
+                        <Ionicons size={20} color="#386BEE" name="heart" style={{ marginHorizontal: 10, marginVertical: 15 }} />
+                        <Text style={{ width: 300 }}>{bio}</Text>
+                    </View>
                 )}
                 {company && (
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Ionicons size={20} color="#386BEE" name="file-tray" style={{ margin: 10 }} />
-                        <Text>{company}</Text>
+                        <Ionicons size={20} color="#386BEE" name="code-working" style={{ margin: 10 }} />
+                        <Text>Work At {company}</Text>
                     </View>
                 )}
-                {bio && (
-                    <View style={{ flexDirection: 'row' }}>
-                        <Ionicons size={20} color="#386BEE" name="heart" style={{ marginHorizontal: 10, marginVertical: 15}} />
-                        <Text style={{width: 300}}>{bio}</Text>
+
+                {location && (
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Ionicons size={20} color="#386BEE" name="map" style={{ margin: 10 }} />
+                        <Text>{location}</Text>
                     </View>
                 )}
+
                 <View style={{ flexDirection: 'row' }}>
                     {follower && (
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -64,11 +70,18 @@ const UserData: React.FC<any> = ({
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Ionicons size={20} color="#386BEE" name="link" style={{ margin: 10 }} />
                         <Text
-                        style={{color: "#386BEE"}}
-                        onPress={() => {
-                            Linking.openURL(html_url);
-                        }}
+                            style={{ color: "#386BEE" }}
+                            onPress={() => Linking.openURL(html_url)}
                         >{html_url}</Text>
+                    </View>
+                )}
+                {blog && (
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Ionicons size={20} color="#386BEE" name="earth" style={{ margin: 10 }} />
+                        <Text
+                            style={{ color: "#386BEE" }}
+                            onPress={() => Linking.openURL(blog)}
+                        >{blog}</Text>
                     </View>
                 )}
             </View>

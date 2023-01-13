@@ -14,6 +14,7 @@ interface IDataUser {
     followers: number;
     following: number;
     html_url: string;
+    location: string;
 }
 
 const Home: React.FC = () => {
@@ -60,6 +61,7 @@ const Home: React.FC = () => {
                         follower={data?.followers}
                         following={data?.following}
                         html_url={data?.html_url}
+                        location={data?.location}
                     />
                 )}
             </Container>

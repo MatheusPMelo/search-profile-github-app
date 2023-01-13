@@ -33,7 +33,9 @@ export const ContainerName = styled.View`
 export const Name = styled.Text`
     text-align: center;
     text-transform: uppercase;
-    font-weight: ligth;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 21px;
     color: #212121;
+    margin-top: 10px;
+    margin-bottom: 20px;
 `

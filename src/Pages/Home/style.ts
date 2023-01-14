@@ -26,3 +26,7 @@ export const Search = styled.Button`
     padding: 10px;
     border-radius: 20px;
 `
+
+export const Hide = styled.View`
+    display: none;
+`
